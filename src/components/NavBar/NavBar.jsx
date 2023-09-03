@@ -5,13 +5,14 @@ import CardWidget from '../CardWidget/CardWidget';
 import styles from './NavBar.module.css'
 const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
+    <Navbar collapseOnSelect expand="lg"  bg="dark" data-bs-theme="dark">
     <Container >
     <Navbar.Brand href="#home">
             <img
               src="https://hongo.themezaa.com/watch/wp-content/uploads/sites/10/2019/06/white-logo@2x.png"
               className="d-inline-block align-top"
               alt="Hongo Logo"
+              width={120}
             />
           </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,7 +24,7 @@ const NavBar = () => {
         
         </Nav> 
         <Nav>
-        <Nav.Link className={styles.rigth}> 0 <CardWidget /></Nav.Link>
+        <Nav.Link className={styles.right}> 0 <CardWidget /></Nav.Link>
         </Nav>
       
       </Navbar.Collapse>
