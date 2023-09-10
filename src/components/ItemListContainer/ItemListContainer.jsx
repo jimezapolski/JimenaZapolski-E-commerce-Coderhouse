@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+
 import { mFetch } from "../../utils/mockFetch"
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import ItemCount from "../ItemCount/ItemCount";
@@ -17,7 +18,7 @@ const ItemListContainer = () => {
         .finally(()=> setLoading(false))
     }, [])
     
-    const onAdd = (count) => {
+    const onAdd = (count ) => {
         console.log('productos seleccionados: ', count);
        
       }
@@ -34,8 +35,13 @@ const ItemListContainer = () => {
                                                                                 <Card.Text> ${product.price} </Card.Text> 
                                                                                 <ItemCount stockInicial={product.stock} initial={1} onAdd={onAdd}></ItemCount>
                                                                                 </Card.Body>
-                                                                                
-                                                                                <Button variant="outline-light">Ver detalle</Button>
+                                                                                <Link 
+ className="btn btn-outline-light"
+ role="button"
+ to={`/detalle/${product.id}`}
+> 
+ Ver Detalle
+</Link>
                                                                                
                                                                                 </Card> 
             )}

@@ -1,3 +1,5 @@
+import { Link, NavLink } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,6 +9,7 @@ const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg"  bg="dark" data-bs-theme="dark">
     <Container >
+    <Link to='/'>
     <Navbar.Brand href="#home">
             <img
               src="https://hongo.themezaa.com/watch/wp-content/uploads/sites/10/2019/06/white-logo@2x.png"
@@ -15,13 +18,12 @@ const NavBar = () => {
               width={120}
             />
           </Navbar.Brand>
+          </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto" >
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Products</Nav.Link>
-          <Nav.Link href="#link">Contact Us</Nav.Link>
-        
+           <Nav.Link as={Link} to='/category/Leather'>Leather</Nav.Link>
+            <Nav.Link  as={Link} to="/category/Minimalist">Minimalist</Nav.Link>
         </Nav> 
         <Nav>
         <Nav.Link className={styles.right}> 0 <CardWidget /></Nav.Link>

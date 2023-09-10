@@ -34,7 +34,7 @@ const ItemCount = ({stockInicial, initial, onAdd}) => {
         <strong className="text-white">{count}</strong>
       </label>
       <Button variant="outline-light" onClick={addCount}> + </Button>
-      <Button variant="outline-light" onClick={onAdd}> add to cart </Button>
+      <Button variant="outline-light" onClick={() =>onAdd(count)}> add to cart </Button>
       </ButtonGroup>
   );
 };
