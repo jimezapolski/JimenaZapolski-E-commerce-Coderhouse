@@ -5,24 +5,27 @@ import { mFetch } from "../../utils/mockFetch"
 
 import ItemDetail from "../ItemDetail/ItemDetail"
 
-const ItemDetialContainer = () => {
-    // api manejo de estados etc
+const ItemDetailContainer = () => {
+    // api manejo de estados 
     const [product, setProduct ] = useState({})
     const { pid } = useParams()
     console.log(pid)
 
     useEffect(()=>{
-        // llamada a la api
-        mFetch(Number(pid))
-        .then(resp => setProduct(resp))
-        .catch(err=> console.log(err))
-        // .finally(set loading)
+            mFetch(Number(pid))
+            .then(resp => setProduct(resp))
+            .catch(err=> console.log(err))    
+             
     },[pid])
     return (
         <div>
-            <ItemDetail product={product} />
+            {
+                // product.length > 0 && product.map(producto => {return (<ItemDetail key={producto.id} product={producto} />)})
+                <ItemDetail key={product.id} product={product} />
+           }
+           
         </div>
     )
 }
 
-export default ItemDetialContainer
+export default ItemDetailContainer

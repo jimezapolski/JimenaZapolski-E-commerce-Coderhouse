@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -10,7 +10,7 @@ const NavBar = () => {
     <Navbar collapseOnSelect expand="lg"  bg="dark" data-bs-theme="dark">
     <Container >
     <Link to='/'>
-    <Navbar.Brand href="#home">
+    <Navbar.Brand >
             <img
               src="https://hongo.themezaa.com/watch/wp-content/uploads/sites/10/2019/06/white-logo@2x.png"
               className="d-inline-block align-top"
@@ -22,8 +22,8 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto" >
-           <Nav.Link as={Link} to='/category/Leather'>Leather</Nav.Link>
-            <Nav.Link  as={Link} to="/category/Minimalist">Minimalist</Nav.Link>
+           <Nav.Link className={({isActive})=>isActive ? 'btn btn-primary' : 'btn btn-outline-primary' }  as={Link} to='/category/Leather'>Leather</Nav.Link>
+            <Nav.Link className={({isActive})=>isActive ? 'btn btn-primary' : 'btn btn-outline-primary' }  as={Link} to="/category/Minimalist">Minimalist</Nav.Link>
         </Nav> 
         <Nav>
         <Nav.Link className={styles.right}> 0 <CardWidget /></Nav.Link>
