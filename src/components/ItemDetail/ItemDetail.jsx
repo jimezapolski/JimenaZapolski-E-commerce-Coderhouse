@@ -1,11 +1,17 @@
 import Card from "react-bootstrap/Card";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/CartContext";
+// import { useContext } from "react";
+// import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ product }) => {
-  const onAdd = (count) => {
-    console.log("productos seleccionados: ", count);
-  };
+  const {addProduct, cartList} = useCartContext()
 
+  const onAdd = (quantity) => {
+    // console.log("productos seleccionados: ", count);
+    addProduct(...product,quantity)
+  };
+  console.log(cartList);
   return (
     <>
     
