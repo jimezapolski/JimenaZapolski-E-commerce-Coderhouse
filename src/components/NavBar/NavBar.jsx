@@ -26,7 +26,7 @@ const NavBar = () => {
             <Nav.Link className={({isActive})=>isActive ? 'btn btn-primary' : 'btn btn-outline-primary' }  as={Link} to="/category/Minimalist">Minimalist</Nav.Link>
         </Nav> 
         <Nav>
-        <Nav.Link className={styles.right}> 0 <CardWidget /></Nav.Link>
+        <Nav.Link className={styles.right}  as={Link} to= 'cartContainer'> 0 <CardWidget /></Nav.Link>
         </Nav>
       
       </Navbar.Collapse>

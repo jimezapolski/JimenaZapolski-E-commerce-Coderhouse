@@ -1,0 +1,159 @@
+.flexContainer {
+    background-color: #2b3035;
+  display: flex;
+  
+}
+.homeInicio {
+  background-color: #e2d7ce;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+}
+
+.homeInicio img {
+  width: 70%;
+  padding-left: 5%;
+  height: auto;
+}
+
+.primeraMitad {
+  width: 50%;
+  display: flex;
+  padding-top: 2em;
+}
+
+.segundaMitad {
+  padding-top: 0;
+  width: 50%;
+}
+.segundaMitad h3 {
+  color: #B88B5E;
+  font-size: 2.1875em;
+  opacity: 1;
+  background: transparent;
+  padding: 2% 0;
+  max-width: 40%;
+  top: 50%;
+  left: 100%;
+  font-weight: 400;
+}
+
+.segundaMitad p {
+  color: #77716c;
+  font-size: 0.8125em;
+  padding: 0 0 4% 0;
+  max-width: 40%;
+}
+.segundaMitad h6 {
+  color: #cca47e;
+  font-size: 0.625em;
+  padding: 10% 2% 0% 0;
+}
+
+.buttonHome {
+  border-radius: 50px;
+  padding: 0.3125em 1.625em;
+  font-size: 0.6875em;
+  line-height: 1.125em;
+  border-color: #b88b5f;
+  color: #b88b5f;
+  background-color: transparent;
+  box-sizing: border-box;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonHome:hover {
+  color: white;
+  background-color: #b88b5f;
+}
+
+.linea {
+  display: flex;
+  position: relative;
+  font-size: 0.8125em;
+  font-weight: 400;
+  align-items: center;
+  width: auto;
+  font-weight: bold;
+  margin: 0 auto;
+}
+.linea::before {
+  content: "";
+  position: initial;
+  width: 1em;
+  height: 0.2em;
+  background-color: #b88b5f;
+  top: 0.6em;
+  margin-right: 1em !important;
+}
+
+.lineas-borde-inferior-home {
+  border-bottom: 0.0225em solid rgb(221, 221, 221);
+  padding: 1.2em 0em;
+  width: 90%;
+}
+
+.imgUno h5 {
+  font-size: 0.75em;
+  padding: 0.5em auto;
+  color: white;
+}
+/*backgound-size:cover; como se adapta y cambia con el  tamaño
+    contain*/
+.imgUno a {
+  font-size: 1.375em;
+  color: #232323 !important;
+  font-weight: 300;
+  width: 60%;
+}
+.imgUno {
+  background-image: url("https://hongo.b-cdn.net/watch/wp-content/uploads/sites/10/2019/11/watch-banner-05-new.jpg?id=48426");
+  background-size: cover;
+  padding-top: 2em;
+}
+
+.imgDos i {
+  color: white;
+  font-size: 4em;
+  margin-top: 200%;
+}
+
+.imgDos {
+  background-image: url("https://hongo.b-cdn.net/watch/wp-content/uploads/sites/10/2019/11/watch-banner-02-new.jpg?id=48427");
+  background-size: cover;
+}
+.imgTres {
+  background-image: url("https://hongo.b-cdn.net/watch/wp-content/uploads/sites/10/2019/11/watch-banner-06-new.jpg.webp");
+  background-size: cover;
+}
+.imgCua {
+  background-image: url("https://hongo.b-cdn.net/watch/wp-content/uploads/sites/10/2019/11/watch-banner-04.jpg?id=48429");
+  background-size: cover;
+  padding-top: 2em;
+}
+.imgCua h5 {
+  color: #b88b5f;
+  font-size: 0, 75em;
+}
+.imgCua a {
+  font-size: 1.375em;
+  max-width: 60%;
+  color: #b88b5f;
+
+}
+/*FIN CUATRO IMAGENES*/
+
+/*TITULOS GLOBALES*/
+.titulosHome {
+  text-align: center;
+}
+
+.titulosHome h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.titulosHome h6 {
+  font-size: 0.7em;
+  color: #6f6f6f;
+  font-weight: 400;
+}

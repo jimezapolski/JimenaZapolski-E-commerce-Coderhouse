@@ -5,11 +5,23 @@ import {collection, getFirestore, getDocs, query, where} from 'firebase/firestor
 import ItemList from "../ItemList/ItemList";
 import { CardGroup } from "react-bootstrap";
 
+const Loading = ()=>{
+   
+
+    return (
+        <>
+            <h2>Loading ...</h2> 
+        </>
+    )
+}
+
 const ItemListContainer = () => { 
     const [products, setProducts] = useState([])
     const [ loading, setLoading ] = useState(true)
+    // const [ meGusta, setMeGusta ] = useState(false)
+
     const {cid} = useParams()
-    console.log(cid)
+  //  console.log(cid)
     
     // useEffect(()=>{
     //     if(cid) {
@@ -31,30 +43,57 @@ const ItemListContainer = () => {
 
     //FUNCION PARA TRAER TODOS
     useEffect(() => {
-        const db = getFirestore()
-        const queryCollection = collection(db, 'products')
-        
-        //para filtrar
-        // const queryFilter = query(queryCollection, 
-        //     where('price', ' ==', '8000'),
-        //     limit(1),
-        //     orderBy('price', 'desc')
-        //  )
+       
+      
+        if(cid) {
+            const db = getFirestore()
+            const queryCollection = collection(db, 'products')
+            getDocs(queryCollection)
+            .then(resp => setProducts(resp.docs.map(prod=>({id:prod.id, ...prod.data()}))))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
+        }
+        else{
+            const db = getFirestore()
+            const queryCollection = collection(db, 'products')
+            // const queryFilter = query(queryCollection, where('category', '==', cid))
+            getDocs(queryCollection)
+            .then(resp => setProducts(resp.docs.map(prod=>({id:prod.id, ...prod.data()}))))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
+            
+            //para filtrar
+            // const queryFilter = query(queryCollection, 
+            //     where('price', ' ==', '8000'),
+            //     limit(1),
+            //     orderBy('price', 'desc')
+            //  )
+    
 
-    //    const queryFilter = query(queryCollection, where('category', '==', cid))
-        getDocs(queryCollection)
-       .then(resp => setProducts(resp.docs.map(prod=>({id:resp.id, ...prod.data()}))))
-       .catch(err => console.log(err))
-       .finally(()=> setLoading(false))
-   
+        }
+      
     }, [cid])
     console.log(products)
-   
+  
+//     // función para agregar un nuevo producto
+//    const handleAddProduct = () => {
+//     setProducts([
+//         ...products,
+//         {id: products.length+1, name: 'Producto de prueba', price: 1500, description: 'lorem asdfas asdf asdf '}
+//     ])
+// }
+//  // función para cambiar el estado de me gusta
+//  const handleMeGusta = () => {
+//     setMeGusta(!meGusta)
+// }
+console.log(products)
     return (
        
              <CardGroup className="bg-dark">
+                   {/* <button className="btn btn-outline-dark" onClick={handleMeGusta}>ME gusta</button>
+                  <button className="btn btn-outline-dark" onClick={handleAddProduct}>agregar product</button> */}
             { loading ? 
-                <h2>Loading ...</h2> 
+                    <Loading />
                 : 
             <ItemList products={products} />
             }
